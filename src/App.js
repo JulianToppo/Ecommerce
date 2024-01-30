@@ -1,16 +1,24 @@
-
-import Banner from './components/Banner';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import MusicAlbums from './components/MusicAlbums';
+import About from "./components/About";
+import Banner from "./components/Banner";
+import Cart from "./components/Cart";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import MusicAlbums from "./components/MusicAlbums";
+import CartContextStore from "./utils/CartContextStore";
 
 function Example() {
   return (
     <div>
-     <Header/>
-     <Banner/>
-     <MusicAlbums/>
-     <Footer/>
+      <CartContextStore>
+        <Header />
+        <Banner />
+        <MusicAlbums />
+        <Footer />
+        <Cart/>
+     
+      </CartContextStore>
+
     </div>
   );
 }
