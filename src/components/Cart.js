@@ -22,7 +22,7 @@ const Cart = () => {
           <Offcanvas.Title>Cart Items</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <h1>Cart</h1>
+          <h1 className="metal font">Cart</h1>
           <div className="container">
             <table className="table table-striped">
               <thead>
@@ -39,16 +39,19 @@ const Cart = () => {
                     <tr>
                       <td>{item.title}</td>
                       <td>{item.price}</td>
-                      <td>{item.quantity}</td>
+                      <td>{item.count}</td>
                     </tr>
                   );
                 })}
-                Total: 2000
+                Total: {cartcontext.total}
               </tbody>
             </table>
           </div>
 
-          <Button>Purchase</Button>
+<div className="mx-auto">
+  <Button className="mt-3 ">Purchase</Button>
+</div>
+          
         </Offcanvas.Body>
       </Offcanvas>
     </div>

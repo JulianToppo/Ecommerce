@@ -33,7 +33,7 @@ const MusicAlbums = () => {
   return (
     <>
     <Container fluid className="p-3 pt-5  d-flex flex-column align-items-center main-container" >
-      <h1>Music</h1>
+      <h1 className="metal-font">Music</h1>
       <Row className="d-flex flex-wrap justify-content-center ">
         {productsArr.map((item, index) => (
           <Col key={index} xs={12} md={6} lg={4} className="mb-5 mx-5">

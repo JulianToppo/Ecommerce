@@ -2,9 +2,10 @@ import { createContext } from "react";
 
 const CartContext=createContext({
     cartItems:[],
-    addCartItems:()=>{},
+    addCartItems:(item)=>{},
     show:true,
-    toggleShow:()=>{}
+    toggleShow:()=>{},
+    total:0
 })
 
 export default CartContext;

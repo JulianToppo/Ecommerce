@@ -5,9 +5,9 @@ import Col from 'react-bootstrap/Col';
 
 const Banner = () => {
   return (
-    <Container fluid className='bg-secondary p-4 mt-1'  sticky="top">
+    <Container fluid className='bg-secondary p-4 mt-1 pb-5'  sticky="top">
       <Row className='justify-content-center align-items-center'>
-        <Col xs='auto' className='text-white display-3 font-weight-bold'>THE GENERICS</Col>
+        <Col xs='auto' className='text-white display-3 metal-font'>THE GENERICS</Col>
       </Row>
     </Container>
   )

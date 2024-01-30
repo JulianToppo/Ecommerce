@@ -15,7 +15,7 @@ const Header = () => {
   console.log("show",cartcontext.show)
 
   return (
-    <Nav className="justify-content-center bg-dark text-white p-2" activeKey="/home">
+    <Nav className="justify-content-center bg-dark text-white p-2 metal-font" activeKey="/home">
     <Nav.Item>
       <Nav.Link className='text-white' href="/home">HOME</Nav.Link>
     </Nav.Item>
@@ -25,9 +25,8 @@ const Header = () => {
     <Nav.Item>
       <Nav.Link className='text-white'  eventKey="link-2">ABOUT</Nav.Link>
     </Nav.Item>
-    <div className='d-flex justify-content-end '>
-       
-      <Button className='text-white' onClick={toggleCartItem}>CART</Button>
+    <div>
+             <Button className='text-white' onClick={toggleCartItem}>CART {cartcontext.cartItems.length}</Button>
    
     </div>
  

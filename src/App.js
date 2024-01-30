@@ -16,6 +16,7 @@ function Example() {
         <MusicAlbums />
         <Footer />
         <Cart/>
+      
      
       </CartContextStore>
 

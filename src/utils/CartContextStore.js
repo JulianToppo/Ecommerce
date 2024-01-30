@@ -2,53 +2,42 @@ import React, { useState } from "react";
 import CartContext from "./CartContext";
 
 const CartContextStore = (props) => {
-  const cartElements = [
-    {
-      title: "Colors",
-
-      price: 100,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-
-      quantity: 2,
-    },
-
-    {
-      title: "Black and white Colors",
-
-      price: 50,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-
-      quantity: 3,
-    },
-
-    {
-      title: "Yellow and Black Colors",
-
-      price: 70,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-
-      quantity: 1,
-    },
-  ];
-  const [cartItems, setcartItems] = useState(cartElements);
+ 
+  const [cartItems, setcartItems] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [totalPrice,setTotal]= useState(0)
 
   const toggleDisplay = () => {
     setShowCart(!showCart);
   };
 
+  const addItemsToCart=(newItem)=>{
+    setTotal(totalPrice+parseInt(newItem.price))
+    let flag=0;
+    const newArray=cartItems.map((item)=>{
+      if(item.title===newItem.title){
+        flag=1;
+        item.count+=1;
+      }
+      return item
+    })
+
+    if(flag===0){
+      setcartItems([...cartItems,newItem])
+    }
+    else{
+      setShowCart([...newArray])
+    }
+
+
+  }
 
   const Cartstore = {
     cartItems: cartItems,
     show: showCart,
     toggleShow: toggleDisplay,
-    // addCartItems:
+    addCartItems:addItemsToCart,
+    total:totalPrice,
   };
   return (
     <CartContext.Provider value={Cartstore}>{props.children}</CartContext.Provider>
