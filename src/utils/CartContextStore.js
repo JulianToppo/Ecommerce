@@ -6,12 +6,14 @@ const CartContextStore = (props) => {
   const [cartItems, setcartItems] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [totalPrice,setTotal]= useState(0)
+  const [totalPurchase,setTotalPurchase]=useState(0)
 
   const toggleDisplay = () => {
     setShowCart(!showCart);
   };
 
   const addItemsToCart=(newItem)=>{
+    setTotalPurchase(totalPurchase+1)
     setTotal(totalPrice+parseInt(newItem.price))
     let flag=0;
     const newArray=cartItems.map((item)=>{
@@ -38,6 +40,7 @@ const CartContextStore = (props) => {
     toggleShow: toggleDisplay,
     addCartItems:addItemsToCart,
     total:totalPrice,
+    totalItems:totalPurchase
   };
   return (
     <CartContext.Provider value={Cartstore}>{props.children}</CartContext.Provider>

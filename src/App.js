@@ -1,3 +1,5 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
 import About from "./components/About";
 import Banner from "./components/Banner";
 import Cart from "./components/Cart";
@@ -9,18 +11,23 @@ import CartContextStore from "./utils/CartContextStore";
 
 function Example() {
   return (
-    <div>
-      <CartContextStore>
-        <Header />
-        <Banner />
-        <MusicAlbums />
-        <Footer />
-        <Cart/>
-      
-     
-      </CartContextStore>
-
-    </div>
+    <Router>
+      <div>
+        <CartContextStore>
+          <Header />
+          <Banner />
+          <Routes>
+             <Route path="/about" element={<About/>} />
+            <Route path="/store" element={<MusicAlbums/>} />
+            <Route exact path="/" element={<Home/>} />
+          </Routes>
+           
+          <Cart />
+          <Footer />
+         
+        </CartContextStore>
+      </div>
+    </Router>
   );
 }
 

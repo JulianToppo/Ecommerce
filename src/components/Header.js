@@ -17,16 +17,16 @@ const Header = () => {
   return (
     <Nav className="justify-content-center bg-dark text-white p-2 metal-font" activeKey="/home">
     <Nav.Item>
-      <Nav.Link className='text-white' href="/home">HOME</Nav.Link>
+      <Nav.Link className='text-white' href="/">HOME</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link className='text-white'  eventKey="link-1">STORE</Nav.Link>
+      <Nav.Link className='text-white' href="/store">STORE</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link className='text-white'  eventKey="link-2">ABOUT</Nav.Link>
+      <Nav.Link className='text-white'  href="/about">ABOUT</Nav.Link>
     </Nav.Item>
     <div>
-             <Button className='text-white' onClick={toggleCartItem}>CART {cartcontext.cartItems.length}</Button>
+             <Button className='text-white' onClick={toggleCartItem}>CART {cartcontext.totalItems}</Button>
    
     </div>
  

@@ -18,3 +18,11 @@ code {
   font-family:'Metal Mania'
 }
 
+.bottom-fix{
+
+  margin-bottom: 0; 
+}
+
+a{
+  text-decoration: none;
+}
