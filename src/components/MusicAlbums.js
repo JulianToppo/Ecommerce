@@ -5,30 +5,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import './MusicAlbums.css'
 import Button from 'react-bootstrap/Button';
+import { productsArr } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const MusicAlbums = () => {
-  const productsArr = [
-    {
-      title: "Colors",
-      price: 100,
-      imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-    },
-    {
-      title: "Black and white Colors",
-      price: 50,
-      imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-    },
-    {
-      title: "Yellow and Black Colors",
-      price: 70,
-      imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-    },
-    {
-      title: "Blue Color",
-      price: 100,
-      imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
-    },
-  ];
+
 
   return (
     <>
@@ -37,7 +18,7 @@ const MusicAlbums = () => {
       <Row className="d-flex flex-wrap justify-content-center ">
         {productsArr.map((item, index) => (
           <Col key={index} xs={12} md={6} lg={4} className="mb-5 mx-5">
-            <ProductCard title={item.title} price={item.price} imageUrl={item.imageUrl} />
+            <Link to={`/products/${index}`}><ProductCard title={item.title} price={item.price} imageUrl={item.imageUrl} /></Link>
           </Col>
         ))}
       </Row>
