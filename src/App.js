@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import MusicAlbums from "./components/MusicAlbums";
 import CartContextStore from "./utils/CartContextStore";
+import ContactUs from "./components/ContactUs";
 
 
 function Example() {
@@ -27,6 +28,10 @@ function Example() {
   {
     path:"/store",
     element:<MusicAlbums/>
+  },{
+  
+    path:"/contactus",
+    element:<ContactUs/>
   }]
   )
   return (

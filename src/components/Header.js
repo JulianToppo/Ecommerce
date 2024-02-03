@@ -25,6 +25,9 @@ const Header = () => {
     <Nav.Item>
       <Nav.Link className='text-white'  href="/about">ABOUT</Nav.Link>
     </Nav.Item>
+      <Nav.Item>
+      <Nav.Link className='text-white'  href="/contactus">CONTACT US</Nav.Link>
+    </Nav.Item>
     <div>
              <Button className='text-white' onClick={toggleCartItem}>CART {cartcontext.totalItems}</Button>
    
