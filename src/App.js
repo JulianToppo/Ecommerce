@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Route, Routes, Switch ,Navigate } from "react-router-dom";
 import About from "./components/About";
 import Banner from "./components/Banner";
 import Cart from "./components/Cart";
@@ -14,32 +14,9 @@ import Login from "./components/Login";
 import LoginContextStore from "./utils/LoginContextStore";
 
 function Example() {
-  const router = createBrowserRouter([
-    {
-      path: "/about",
-      element: <About />,
-    },
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/store",
-      element: <MusicAlbums />,
-    },
-    {
-      path: "/contactus",
-      element: <ContactUs />,
-    },
-    {
-      path: "/products/:id",
-      element: <Product />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-  ]);
+
+  const localToken=localStorage.getItem("token")
+  
   return (
     <div>
       <LoginContextStore>
@@ -47,7 +24,25 @@ function Example() {
           <Header />
           <Banner />
 
-          <RouterProvider router={router} />
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/store"
+              element={
+                localToken ? (
+                  <MusicAlbums />
+                ) : (
+                  <Navigate to="/login" replace={true} />
+                )
+              }
+            />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/products/:id" element={<Product />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        
+
           <Cart />
           <Footer />
         </CartContextStore>
