@@ -10,6 +10,8 @@ import MusicAlbums from "./components/MusicAlbums";
 import CartContextStore from "./utils/CartContextStore";
 import ContactUs from "./components/ContactUs";
 import Product from "./components/Product";
+import Login from "./components/Login";
+import LoginContextStore from "./utils/LoginContextStore";
 
 function Example() {
   const router = createBrowserRouter([
@@ -30,20 +32,26 @@ function Example() {
       element: <ContactUs />,
     },
     {
-      path:"/products/:id",
-      element:<Product/> 
-    }
+      path: "/products/:id",
+      element: <Product />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
   ]);
   return (
     <div>
-      <CartContextStore>
-        <Header />
-        <Banner />
+      <LoginContextStore>
+        <CartContextStore>
+          <Header />
+          <Banner />
 
-        <RouterProvider router={router} />
-        <Cart />
-        <Footer />
-      </CartContextStore>
+          <RouterProvider router={router} />
+          <Cart />
+          <Footer />
+        </CartContextStore>
+      </LoginContextStore>
     </div>
   );
 }
