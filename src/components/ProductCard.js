@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import CartContext from "../utils/CartContext";
+import { crudcrudapi } from "../utils/constants";
 const ProductCard = (props) => {
   const cartContext = useContext(CartContext);
-  const addItemOnClick = (e) => {
+  const addItemOnClick =async (e) => {
     e.preventDefault();
     const elem = {
       title: props.title,
@@ -13,6 +14,8 @@ const ProductCard = (props) => {
       count:1
     };
     cartContext.addCartItems(elem);
+    
+  
   };
   return (
     <Card style={{ width: "18rem" }}>

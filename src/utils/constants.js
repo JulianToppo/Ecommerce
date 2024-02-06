@@ -22,3 +22,5 @@ export const productsArr = [
       imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
     },
   ]; 
+
+  export const crudcrudapi="https://crudcrud.com/api/5ed86c9ff778405fa5d24f50cb4ac38d"

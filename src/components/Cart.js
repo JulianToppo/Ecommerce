@@ -8,9 +8,9 @@ const Cart = () => {
   const [cartElem, setcartElem] = useState([]);
 
   useEffect(() => {
-    setcartElem(cartcontext?.cartItems);
-    console.log(cartElem);
-  }, [cartcontext.cartItems]);
+    setcartElem(cartcontext?.cart);
+
+  }, [cartcontext.cart]);
 
   return (
     <div>
@@ -36,7 +36,7 @@ const Cart = () => {
               <tbody>
                 {cartElem?.map((item, index) => {
                   return (
-                    <tr>
+                    <tr key={index+item.title}>
                       <td>{item.title}</td>
                       <td>{item.price}</td>
                       <td>{item.count}</td>

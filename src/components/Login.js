@@ -35,8 +35,11 @@ const Login = () => {
 
     if (setCredentails.ok) {
       console.log("login successful");
+      console.log(data)
       localStorage.setItem("token", data.idToken);
+      localStorage.setItem("email",data.email);
       loginCtx.loginToken(data.idToken);
+
       navigate("/store");
     }else{
       
